@@ -8,8 +8,11 @@ Bundler.require(*Rails.groups)
 
 module Blog
   class Application < Rails::Application
+    Object.const_set('CREDENTIALS', credentials)
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.log_level = :debug
 
     # Configuration for the application, engines, and railties goes here.
     #

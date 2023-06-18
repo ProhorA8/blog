@@ -1,9 +1,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
-  username: <%= CREDENTIALS[:username] %>
-  password: <%= CREDENTIALS[:password] %>
+  username: <%= ENV['BLOG_DATABASE_USERNAME'] %>
+  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -16,6 +15,6 @@ test:
 
 production:
   <<: *default
-  database: ererere_production
+  database: blog_production
   username: <%= CREDENTIALS[:production][:username] %>
   password: <%= CREDENTIALS[:production][:password] %>

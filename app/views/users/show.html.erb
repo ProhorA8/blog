@@ -1,0 +1,23 @@
+<% if current_user %>
+  <div class="text-center mt-5">
+    <table class="table table-light">
+      <thead>
+      <tr>
+        <th class="display-6"><%= t '.name' %></th>
+        <th class="display-6"><%= t '.email'%></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= current_user.name %></td>
+        <td><%= current_user.email %></td>
+      </tr>
+      </tbody>
+    </table><br>
+
+    <button type="button" class="btn btn btn-outline-info"><%= link_to t('links.edit_profile'), edit_user_path(current_user), class: 'btn btn-default' %></button>
+
+  </div>
+<% else %>
+  <p>Root page</p>
+<% end %>

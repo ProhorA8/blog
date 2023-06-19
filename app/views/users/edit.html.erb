@@ -1,0 +1,12 @@
+<h2 class="border-bottom text-dark"><%= t('heading.еdit_profile') %></h2>
+<div class="col-md-6 buffer-top py-4">
+  <%= render 'form', user: current_user %><br>
+
+  <p class="buffer-top">
+    <%= link_to t('links.сhange_password'), edit_user_registration_path, class: 'btn btn-outline-warning' %>
+  </p>
+
+  <div class="py-4">
+    <%= link_to t('links.to_return'), :back, class: 'btn btn-secondary' %>
+  </div>
+</div>

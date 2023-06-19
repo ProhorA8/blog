@@ -1,0 +1,81 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              user_email_exists: 'Пользователь с таким email уже существует, пожалуйста авторизуйтесь!'
+
+  controllers:
+    users:
+      updated: 'Вы обновили свой профиль'
+
+  app:
+    name: 'Блог'
+
+  users:
+    form:
+      save: 'Сохранить'
+      or: 'или'
+      back: 'назад'
+
+  links:
+    register: 'Зарегистрироваться'
+    sign_in: 'Войти'
+    privacy_policy: 'политикой конфиденциальности'
+    forgot_password: 'Забыли пароль?'
+    send_me: 'Отправить мне инструкции по сбросу пароля'
+    change: 'Изменить'
+    сreate_event: 'Создать событие'
+    save: 'Сохранить'
+    to_return: 'Вернуться'
+    log_off: 'Выйти'
+    сhange_password: 'Сменить пароль'
+    confirmation_password: 'Пароль подтверждения'
+    edit_profile: 'Редактировать профиль'
+    update: 'Обновить'
+    delete_profile: 'Удалить мой аккаунт'
+    delete_event: 'Удалить событие'
+    load: 'Загрузить'
+    to_home: 'На главную'
+    to_home_errors: 'на главную страницу'
+    sign_in_with: 'Войти с помощью %{provider}'
+
+  heading:
+    forgot_your_password: 'Забыли свой пароль?'
+    еdit_profile: 'Редактировать профиль'
+    delete_account: 'Удалить аккаунт?'
+    delete_event: 'Удалить собыите?'
+    registration: 'Регистрация'
+    come_in: 'Войти'
+    editing_event: 'Редактирование события'
+    event: 'События'
+    new_event: 'Новое событие'
+    еdit_password: 'Редактировать пароль'
+    organized: 'Организовал:'
+    calling: 'Зовет'
+    add_photo: 'Добавление фотографий'
+    i_will_go: 'Я пойду!'
+    will_go: 'Пойдут!'
+    privacy_policy: 'Политика конфиденциальности'
+    change_password: 'Изменить пароль'
+    access_only_by_pin_code: 'Доступ только по пин-коду'
+
+  errors:
+    one: "В вашей форме %{count} ошибка"
+    few: "В вашей форме %{count} ошибки"
+    many: "В вашей форме %{count} ошибок"
+    not-found:
+      title: 'К сожалению страница не найдена.'
+      messeges: 'Вы можете смириться или перейти на'

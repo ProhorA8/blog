@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/heartcombo/devise/wiki/I18n
 
-en:
+ru:
   devise:
     confirmations:
       confirmed: "Ваш адрес электронной почты успешно подтвержден."
@@ -9,7 +9,7 @@ en:
     failure:
       already_authenticated: "Вы уже вошли в систему."
       inactive: "Ваша учетная запись еще не активирована."
-      invalid: "Invalid %{authentication_keys} or password."
+      invalid: "Неверный %{authentication_keys} или пароль."
       locked: "Ваш аккаунт заблокирован."
       last_attempt: "У вас есть еще одна попытка, прежде чем ваша учетная запись будет заблокирована."
       not_found_in_database: "Неверный %{authentication_keys} или пароль."
@@ -28,9 +28,9 @@ en:
       signed_up_but_inactive: "Вы успешно зарегистрировались. Однако мы не смогли войти в систему, поскольку ваша учетная запись еще не активирована."
       signed_up_but_locked: "Вы успешно зарегистрировались. Однако мы не смогли войти в систему, поскольку ваша учетная запись заблокирована."
       signed_up_but_unconfirmed: "На ваш адрес электронной почты было отправлено сообщение со ссылкой для подтверждения. Пожалуйста, перейдите по ссылке, чтобы активировать свою учетную запись."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
-      updated: "Your account has been updated successfully."
-      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
+      update_needs_confirmation: "Вы успешно обновили свою учетную запись, но нам необходимо подтвердить ваш новый адрес электронной почты. Пожалуйста, проверьте свою электронную почту и перейдите по ссылке подтверждения, чтобы подтвердить свой новый адрес электронной почты."
+      updated: "Ваша учетная запись успешно обновлена."
+      updated_but_not_signed_in: "Ваша учетная запись была успешно обновлена, но, поскольку ваш пароль был изменен, вам необходимо снова войти в систему."
     sessions:
       signed_in: "Выполнен вход."
       signed_out: "Выполнен выход."
@@ -47,5 +47,5 @@ en:
       not_found: "не найдено"
       not_locked: "не был заблокирован"
       not_saved:
-          one: "1 ошибка запрещает это %{resource} от спасения:"
+        one: "1 ошибка запрещает это %{resource} от спасения:"
         other: "%{count} ошибки запрещают это %{resource} от спасения:"

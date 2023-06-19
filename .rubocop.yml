@@ -8,3 +8,7 @@ require:
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.1.2
+
+  Exclude:
+    - 'db/*'
+    - 'db/migrate/*'

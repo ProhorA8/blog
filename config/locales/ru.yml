@@ -24,6 +24,12 @@ ru:
   app:
     name: 'Блог'
 
+  users:
+    form:
+      save: 'Сохранить'
+      or: 'или'
+      back: 'назад'
+
   links:
     register: 'Зарегистрироваться'
     sign_in: 'Войти'

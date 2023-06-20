@@ -1,0 +1,24 @@
+<%# Post edit form %>
+<div class="row">
+  <div class="col-md-6 my-4">
+    <%= form_for [ current_user, current_user.posts.build ], html: { multipart: true } do |f| %>
+      <%= render partial: 'partials/form_errors', locals: { model: current_user } %>
+
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :body %>
+        <%= f.text_field :body, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :image %>
+        <%= f.file_field :images, multiple: true, class: 'form-control' %>
+      </div>
+      <div class="actions mt-4">
+        <input class="btn btn-success btn-block" type="submit" value="<%= t '.save' %>">
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,8 +1,8 @@
 <%# User edit form %>
 <div class="row">
   <div class="col-md-4 my-4">
-    <%= form_for user, html: {multipart: true} do |f| %>
-      <%= render partial: 'partials/form_errors', locals: {model: user} %>
+    <%= form_for user, html: { multipart: true } do |f| %>
+      <%= render partial: 'partials/form_errors', locals: { model: user } %>
 
       <div class="form-group">
         <%= f.label :name %>
@@ -13,8 +13,7 @@
         <%= f.text_field :email, class: 'form-control' %>
       </div>
       <div class="actions mt-4">
-
-      <input class="btn btn-success btn-block" type="submit" value="<%= t '.save' %>">
+        <input class="btn btn-success btn-block" type="submit" value="<%= t '.save' %>">
       </div>
     <% end %>
   </div>

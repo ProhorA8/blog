@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'users#index'
+  root 'posts#index'
 
-  resources :users, only: %i[show edit update]
+  resources :users, only: %i[show edit update] do
+    resources :posts
+  end
 end

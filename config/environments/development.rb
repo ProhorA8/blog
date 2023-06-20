@@ -59,8 +59,10 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  logger = ActiveSupport::Logger.new($stdout)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
   config.log_level = :debug
-  config.logger = Logger.new($stdout)
 
   # sending emails from Devise
   config.action_mailer.default_url_options = { host: 'localhost:3000' }

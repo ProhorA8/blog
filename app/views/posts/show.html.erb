@@ -1,0 +1,27 @@
+<h1><%= @post.title %></h1>
+
+<p><%= @post.body %></p>
+
+<% if @post.images.attached? %>
+  <% @post.images.each do |image| %>
+    <% if image.image? %>
+      <div class="d-inline-block">
+        <%=link_to image_tag(image.variant(resize_to_limit: [100, 100])), image %><br />
+      </div>
+    <% else %>
+      <%= link_to image.filename, rails_blob_path(image, disposition: "attachment") %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<p class="buffer-top">
+  <%= link_to t('links.edit'), edit_user_post_path(@post) , class: 'btn btn-outline-warning'%>
+</p>
+
+<p class="buffer-top">
+  <%= button_to t('links.delete'), [@post.user, @post], method: :delete, class: 'btn btn-outline-danger' %>
+</p>
+
+<div class="py-4">
+  <%= link_to t('links.to_return'), user_path, class: 'btn btn-secondary' %>
+</div>

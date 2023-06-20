@@ -15,9 +15,8 @@
       </tbody>
     </table><br>
 
-    <button type="button" class="btn btn btn-outline-info"><%= link_to t('links.edit_profile'), edit_user_path(current_user), class: 'btn btn-default' %></button>
-
+    <%= render partial: 'partials/post', locals: { user: current_user } %>
   </div>
 <% else %>
-  <p>Root page</p>
+  <р2>Not your page!</р2>
 <% end %>

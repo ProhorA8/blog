@@ -10,8 +10,8 @@ gem 'bootstrap'
 gem 'devise'
 gem 'devise-i18n'
 gem "importmap-rails"
+gem 'image_processing'
 gem "jbuilder"
-gem 'jquery-rails'
 gem "pg"
 gem "puma", "~> 5.0"
 gem "redis", "~> 4.0"

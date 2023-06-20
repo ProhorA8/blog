@@ -24,7 +24,9 @@
   <div class="container-fluid justify-content-end">
     <ul class="nav navbar-nav">
       <% if user_signed_in? %>
+        <li><%= link_to t('users.show.new_post'), new_user_post_path(current_user), class: 'nav-link' %></li>
         <li><%= link_to "#{current_user.name}", current_user, class: 'nav-link' %></li>
+        <li><%= link_to t('links.edit_profile'), edit_user_path(current_user), class: 'nav-link' %></li>
         <li><%= button_to t('links.log_off'), destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
       <% else %>
         <li><%= link_to t('links.sign_in'), new_user_session_path, class: 'nav-link' %></li>

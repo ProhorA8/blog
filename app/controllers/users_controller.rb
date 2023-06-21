@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
+  before_action :set_user, only: [:show]
   before_action { I18n.locale = :ru }
 
   def index = @users = User.all.count
 
-  def show; end
+  def show = @comments = @user.comments
 
   def edit; end
 

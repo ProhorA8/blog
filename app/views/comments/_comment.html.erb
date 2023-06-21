@@ -1,0 +1,19 @@
+<div class="buffer-bottom py-4">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-4" >
+        <div style="background-color: #CCCCCC">Пользователь: <%= comment.user_name %></div>
+      </div>
+      <div class="col p-3" style="background-color: #EFEFEF">
+        <%= comment.body %>
+      </div>
+
+      <% if current_user_can_edit?(comment) && comment.id.present? %>
+        <em class=""><%= comment.created_at.strftime("%d %b. %Y %H:%M") %></em>
+        <%= button_to(t('links.delete'), post_comment_path(comment.post, comment),
+                      method: :delete, data: { confirm: t('.destroy_confirm') }, class: 'btn btn-outline-danger btn-sm'
+            ) %>
+      <% end %>
+    </div>
+  </div>
+</div>

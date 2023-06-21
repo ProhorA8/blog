@@ -20,22 +20,20 @@ ru:
   controllers:
     users:
       updated: 'Вы обновили свой профиль'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
 
   app:
     name: 'Блог'
 
-  users:
-    form:
-      save: 'Сохранить'
-      or: 'или'
-      back: 'назад'
-    show:
-      new_post: 'Новый пост'
-  posts:
-    form:
-      save: 'Сохранить'
-      or: 'или'
-      back: 'назад'
+  new_post: 'Создать пост'
+
+  form:
+    save: 'Сохранить'
+    or: 'или'
+    back: 'назад'
 
   links:
     edit: 'Редактировать'

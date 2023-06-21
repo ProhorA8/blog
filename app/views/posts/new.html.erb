@@ -1,6 +1,6 @@
 <h1>New Post</h1>
 
-<%= render "form" %>
+<%= render "form", post: @post %>
 
 <div class="py-4">
   <%= link_to t('links.to_return'), :back, class: 'btn btn-secondary' %>

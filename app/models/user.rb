@@ -7,6 +7,7 @@ class User < ApplicationRecord
   before_validation :set_name, on: :create
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   private
 

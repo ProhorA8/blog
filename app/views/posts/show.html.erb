@@ -1,7 +1,5 @@
 <h1><%= @post.title %></h1>
 
-<p><%= @post.body %></p>
-
 <% if @post.images.attached? %>
   <% @post.images.each do |image| %>
     <% if image.image? %>
@@ -14,14 +12,16 @@
   <% end %>
 <% end %>
 
-<p class="buffer-top">
-  <%= link_to t('links.edit'), edit_user_post_path(@post) , class: 'btn btn-outline-warning'%>
-</p>
+<p class="buffer-top"><%= @post.body %></p>
 
-<p class="buffer-top">
-  <%= button_to t('links.delete'), [@post.user, @post], method: :delete, class: 'btn btn-outline-danger' %>
-</p>
+<%= render partial: 'comments/comment', collection: @comments %>
 
-<div class="py-4">
-  <%= link_to t('links.to_return'), user_path, class: 'btn btn-secondary' %>
-</div>
+<% if user_signed_in? %>
+  <%= render partial: 'comments/form', locals: {comment: @new_comment || @post.comments.build} %>
+
+  <%= link_to t('links.edit'), edit_post_path(@post) , class: 'btn btn-outline-warning'%>
+
+  <div class="py-4">
+    <%= link_to t('links.to_return'), user_path(current_user), class: 'btn btn-secondary' %>
+  </div>
+<% end %>

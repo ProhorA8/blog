@@ -1,36 +1,39 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: %i[show edit update destroy]
+
   def index = @posts = Post.all
 
-  def show = @post = Post.find(params[:id])
+  def show
+    @comments = @post.comments if @post.comments.any?
+    @new_comment = @post.comments.build(params[:comment])
+  end
 
   def new = @post = Post.new
 
-  def edit = @post = Post.find(params[:id])
+  def edit; end
 
   def create
-    @user = User.find(params[:user_id])
-    @post = @user.posts.create(post_params)
-    redirect_to user_path(@user)
+    @post = current_user.posts.create(post_params)
+    redirect_to user_path(current_user)
   end
 
   def update
-    @post = Post.find(params[:id])
-
     if @post.update(post_params)
-      redirect_to user_post_path(@post)
+      redirect_to post_path(@post)
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to user_path(current_user), status: :see_other
   end
 
   private
+
+  def set_post = @post = Post.find(params[:id])
 
   def post_params
     params.require(:post).permit(:title, :body, images: [])

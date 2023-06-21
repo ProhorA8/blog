@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 my-4">
+    <%= form_for [@post, comment] do |f| %>
+      <%= render partial: 'partials/form_errors', locals: {model: comment} %>
+
+      <% unless current_user.present? && @post.user_id == current_user.id %>
+        <div class="form-group">
+          <%= f.label :user_name %>
+          <%= f.text_field :user_name, class: 'form-control' %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :comment %>
+        <%= f.text_area :body, class: 'form-control mt-3', placeholder: 'Your text' %>
+      </div>
+
+      <div class="actions mt-4">
+        <input class="btn btn-success btn-block" type="submit" value="<%= t 'form.save' %>">
+      </div>
+    <% end %>
+  </div>
+</div>

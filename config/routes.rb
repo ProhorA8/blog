@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  resources :users, only: %i[show edit update] do
-    resources :posts
+  resources :users, only: %i[show edit update]
+
+  resources :posts do
+    resources :comments
   end
 end

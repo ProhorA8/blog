@@ -1,7 +1,7 @@
 <%# Post edit form %>
 <div class="row">
   <div class="col-md-6 my-4">
-    <%= form_for [ current_user, current_user.posts.build ], html: { multipart: true } do |f| %>
+    <%= form_for post , html: { multipart: true } do |f| %>
       <%= render partial: 'partials/form_errors', locals: { model: current_user } %>
 
       <div class="form-group">
@@ -17,7 +17,7 @@
         <%= f.file_field :images, multiple: true, class: 'form-control' %>
       </div>
       <div class="actions mt-4">
-        <input class="btn btn-success btn-block" type="submit" value="<%= t '.save' %>">
+        <input class="btn btn-success btn-block" type="submit" value="<%= t 'form.save' %>">
       </div>
     <% end %>
   </div>

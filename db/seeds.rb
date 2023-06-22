@@ -1,6 +1,7 @@
 require 'faker'
 
 User.destroy_all
+AdminUser.destroy_all
 
 10.times do |i|
   password = Faker::Internet.password(min_length: 6)
@@ -15,3 +16,5 @@ end
 User.all.each do |user|
   user.posts.create!([{ title: Faker::Book.title, body: Faker::Lorem.paragraph }, { title: Faker::Book.title, body: Faker::Lorem.paragraph }])
 end
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

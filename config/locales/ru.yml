@@ -1,5 +1,8 @@
 ru:
-  activerecord:
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
+
     models:
       user: 'Пользователь'
 
@@ -16,6 +19,18 @@ ru:
           attributes:
             user_email:
               user_email_exists: 'Пользователь с таким email уже существует, пожалуйста авторизуйтесь!'
+
+  activerecord:
+    errors:
+      models:
+        admin_user:
+          attributes:
+
+            password_confirmation:
+              confirmation: 'Отсутствует подтверждение пароля'
+            password:
+              too_short: 'Короткий пароль'
+              blank: 'Отсутствует пароль'
 
   controllers:
     users:

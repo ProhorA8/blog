@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
+  PER_PAGE = 5
 
-  def index = @posts = Post.all
+  def index
+    @page = params.fetch(:page, 0).to_i
+    @posts_paging = Post.offset(@page * PER_PAGE).limit(PER_PAGE)
+  end
 
   def show
     @comments = @post.comments if @post.comments.any?

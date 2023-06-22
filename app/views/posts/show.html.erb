@@ -16,7 +16,7 @@
 
 <%= render partial: 'comments/comment', collection: @comments %>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && @post.user_id == current_user.id %>
   <%= render partial: 'comments/form', locals: {comment: @new_comment || @post.comments.build} %>
 
   <%= link_to t('links.edit'), edit_post_path(@post) , class: 'btn btn-outline-warning'%>

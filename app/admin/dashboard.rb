@@ -1,17 +1,18 @@
 # frozen_string_literal: true
-ActiveAdmin.register_page "Dashboard" do
-  menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
 
-  content title: proc { I18n.t("active_admin.dashboard") } do
+ActiveAdmin.register_page 'Dashboard' do
+  menu priority: 1, label: proc { I18n.t('active_admin.dashboard') }
+
+  content title: proc { I18n.t('active_admin.dashboard') } do
     columns do
       column do
-        panel "Info" do
-          para "Welcome to ActiveAdmin."
+        panel 'Info' do
+          para 'Welcome to ActiveAdmin.'
         end
       end
 
       column do
-        panel "Users" do
+        panel 'Users' do
           ul do
             li "count: #{User.count}"
             li br
@@ -23,7 +24,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Posts" do
+        panel 'Posts' do
           ul do
             li "count: #{Post.count}"
             li br
@@ -35,7 +36,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Comments count" do
+        panel 'Comments count' do
           ul do
             Comment.count
           end

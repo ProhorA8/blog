@@ -5,6 +5,8 @@ ruby "3.1.2"
 
 gem "rails", "7.0.3"
 
+gem 'activeadmin'
+gem 'arctic_admin'
 gem "bootsnap", require: false
 gem 'bootstrap'
 gem 'devise'

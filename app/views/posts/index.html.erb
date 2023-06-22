@@ -1,14 +1,7 @@
 <h2>Posts</h2>
 
-<ul>
-  <% @posts_paging.each do |post| %>
-    <li>
-      <%= link_to post.title, post %>
-    </li>
-  <% end %>
-</ul>
+<%= render @posts %>
 
-<div class="text-center">
-  <%= link_to 'Previous page', posts_path(page: @page - 1) %>
-  <%= link_to 'Next page', posts_path(page: @page + 1) %>
+<div class="apple_pagination">
+  <%= will_paginate @posts, :container => false %>
 </div>

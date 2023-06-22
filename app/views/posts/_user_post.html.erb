@@ -1,0 +1,8 @@
+<div class="buffer-bottom py-4">
+  <% user.posts.each do |post| %>
+    <p>
+      <strong>Title:</strong>
+      <%= link_to post.title, post %>
+    </p>
+  <% end %>
+</div>

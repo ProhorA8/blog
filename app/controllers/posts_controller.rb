@@ -3,8 +3,7 @@ class PostsController < ApplicationController
   PER_PAGE = 5
 
   def index
-    @page = params.fetch(:page, 0).to_i
-    @posts_paging = Post.offset(@page * PER_PAGE).limit(PER_PAGE)
+    @posts = Post.paginate(page: params[:page], per_page: 5)
   end
 
   def show

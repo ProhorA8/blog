@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  app:
+    image: blog
+    environment:
+      BLOG_DATABASE_USERNAME: postgres
+      BLOG_DATABASE_PASSWORD: example
+    ports:
+      - 3000:3000
+  db:
+    image: postgres:alpine3.15
+    environment:
+      BLOG_DATABASE_PASSWORD: example

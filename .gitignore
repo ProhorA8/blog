@@ -10,6 +10,7 @@
 .DS_Store
 .idea/
 #Gemfile.lock
+#docker-compose.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*
